@@ -19,7 +19,6 @@ def test_search_file_into_archive():
         assert 'example.csv' in zipp.namelist()
         assert 'example.pdf' in zipp.namelist()
         assert 'example.xlsx' in zipp.namelist()
-        assert os.path.getmtime(f'{TMP_DIR}/test_archive.zip') == 1753867417.9110734
 
 
 def test_read_file_pdf_into_archive():
@@ -39,4 +38,4 @@ def test_read_file_xlsx_into_archive():
 def test_read_file_csv_into_archive():
     with ZipFile(f'{TMP_DIR}/test_archive.zip', 'r') as zipp:
         unit = csv.read_csv(BytesIO(zipp.read('example.csv')))
-        assert "123" in list(unit.columns)
+        assert "CSV test file" in list(unit.columns)

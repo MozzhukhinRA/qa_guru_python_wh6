@@ -5,6 +5,7 @@ from paths import TMP_DIR
 
 
 def test_download_and_save_pdf():
+    print(f"\n[DEBUG] browser.config.base_url = {browser.config.base_url}")
     browser.open('/file-format/pdf')
     download_url = browser.element('[title="Скачать example.pdf"]').get(query.attribute('href'))
     content = requests.get(url=download_url).content
