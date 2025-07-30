@@ -1,0 +1,8 @@
+pandas
+openpyxl
+pypdf
+requests
+selenium
+pytest
+selene == 2.0.0rc9
+webdriver-manager==4.0.2
